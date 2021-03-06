@@ -13,8 +13,6 @@ namespace TyreDegradation.App.ViewModels
         public TyreResultsViewModel(ResultsService resultsService, TyrePlacement placement)
         {
             resultsService.AverageRecalculated[placement] += d => Average = d;
-            _average = new Random().Next(1, 3000);
-            _range = new Random().Next(1, 3000);
         }
 
         public double Average

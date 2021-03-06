@@ -14,7 +14,7 @@
         </Grid.ColumnDefinitions>
         <materialDesign:ColorZone
             Grid.Column="0"
-            Mode="PrimaryLight"
+            Background="Green"
             Padding="16">
             <TextBlock
                 VerticalAlignment="Center"
@@ -23,7 +23,7 @@
         </materialDesign:ColorZone>
         <materialDesign:ColorZone
             Grid.Column="1"
-            Mode="PrimaryMid"
+            Background="Orange"
             Padding="16">
             <TextBlock
                 VerticalAlignment="Center"
@@ -32,7 +32,7 @@
         </materialDesign:ColorZone>
         <materialDesign:ColorZone
             Grid.Column="2"
-            Mode="PrimaryDark"
+            Background="Red"
             Padding="16">
             <TextBlock
                 VerticalAlignment="Center"
