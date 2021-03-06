@@ -9,15 +9,15 @@
         Header="Front Right"
         Style="{DynamicResource MaterialDesignCardGroupBox}"
         Margin="16"
-        materialDesign:ColorZoneAssist.Mode="SecondaryMid">
+        materialDesign:ColorZoneAssist.Mode="PrimaryLight">
         <GroupBox.HeaderTemplate>
             <DataTemplate>
                 <StackPanel
                     Orientation="Horizontal">
                     <materialDesign:PackIcon
                         Kind="Cog"
-                        Height="32"
-                        Width="32"
+                        Height="24"
+                        Width="24"
                         VerticalAlignment="Center" />
                     <TextBlock
                         Margin="8,0,0,0"

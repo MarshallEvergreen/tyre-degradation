@@ -58,7 +58,7 @@ namespace TyreDegradation.Services.Results
 
         private DegradationResults CalculateDegradationResults(TyrePlacement placement)
         {
-            return _degradationCalculator.Calculate(_selectedTyres[placement], _selectedTrack.DegradationPoints, 40);
+            return _degradationCalculator.Calculate(_selectedTyres[placement], _selectedTrack.DegradationPoints, 100);
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using Prism.Mvvm;
+﻿using Prism.Mvvm;
 using TyreDegradation.Contract.Enums;
 using TyreDegradation.Services.Results;
 

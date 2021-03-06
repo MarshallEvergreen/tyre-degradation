@@ -10,7 +10,7 @@
     <GroupBox
         Header="Results"
         Margin="16"
-        materialDesign:ColorZoneAssist.Mode="SecondaryMid">
+        materialDesign:ColorZoneAssist.Mode="PrimaryDark">
         <GroupBox.HeaderTemplate>
             <DataTemplate>
                 <StackPanel
