@@ -12,7 +12,11 @@ namespace TyreDegradation.App.ViewModels
 
         public TyreResultsViewModel(ResultsService resultsService, TyrePlacement placement)
         {
-            resultsService.AverageRecalculated[placement] += d => Average = d;
+            resultsService.AverageRecalculated[placement] += result =>
+            {
+                Average = result.Average;
+                Range = result.Range;
+            };
         }
 
         public double Average

@@ -100,7 +100,7 @@ namespace TyreDegradation.Data.Parsers.UnitTests
         {
             var tyreInfo = _tyreInformationParser.GetTyreData(SingleTyreFile);
 
-            tyreInfo[TyrePlacement.FrontLeft][0].Type.Should().Be(Tyre1Type);
+            tyreInfo[TyrePlacement.FrontLeft][0].Type.Should().Be(TyreCompound.SuperSoft);
         }
         
         [TestMethod]
@@ -150,8 +150,8 @@ namespace TyreDegradation.Data.Parsers.UnitTests
         {
             var tyreInfo = _tyreInformationParser.GetTyreData(MultipleTyreFile);
 
-            tyreInfo[TyrePlacement.FrontLeft][0].Type.Should().Be(Tyre1Type);
-            tyreInfo[TyrePlacement.FrontLeft][1].Type.Should().Be(Tyre2Type);
+            tyreInfo[TyrePlacement.FrontLeft][0].Type.Should().Be(TyreCompound.SuperSoft);
+            tyreInfo[TyrePlacement.FrontLeft][1].Type.Should().Be(TyreCompound.SuperSoft);
         }
         
         [TestMethod]

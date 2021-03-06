@@ -43,6 +43,7 @@
             <local:TyreComboBox Grid.Row="0" Grid.Column="1" DataContext="{Binding FrontRight}" />
             <local:TyreComboBox Grid.Row="1" Grid.Column="0" DataContext="{Binding RearLeft}" />
             <local:TyreComboBox Grid.Row="1" Grid.Column="1" DataContext="{Binding RearRight}" />
+            <local:TrackSelectorComboBox Grid.Row="2" Grid.Column="0" DataContext="{Binding TrackSelector}" />
         </Grid>
     </GroupBox>
 </UserControl>

@@ -10,6 +10,7 @@ namespace TyreDegradation.App.ViewModels
     public class TyreComboBoxViewModel : BindableBase
     {
         private readonly TyrePlacement _tyrePlacement;
+        private readonly Dictionary<string, TyreInformation> _availableTyreInformation;
         private string _selectedTyre;
         private readonly ResultsService _resultsService;
         public TyreComboBoxViewModel(
@@ -22,11 +23,12 @@ namespace TyreDegradation.App.ViewModels
             TyrePlacement = tyrePlacement.ToString();
             
             AvailableTyres = new ObservableCollection<string>();
+            _availableTyreInformation = new Dictionary<string, TyreInformation>();
             foreach (var tyre in availableTyres[_tyrePlacement])
             {
                 AvailableTyres.Add(tyre.Name);
+                _availableTyreInformation[tyre.Name] = tyre;
             }
-            AvailableTyres = AvailableTyres;
         }
         
         public ObservableCollection<string> AvailableTyres { get; }
@@ -37,7 +39,7 @@ namespace TyreDegradation.App.ViewModels
             set
             {
                 _selectedTyre = value;
-                _resultsService.SetSelectedTyre(_tyrePlacement);
+                _resultsService.SetSelectedTyre(_tyrePlacement, _availableTyreInformation[_selectedTyre]);
             }
         }
 

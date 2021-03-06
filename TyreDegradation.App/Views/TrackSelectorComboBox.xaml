@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="TyreDegradation.App.Views.TyreComboBox"
+﻿<UserControl x:Class="TyreDegradation.App.Views.TrackSelectorComboBox"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -15,14 +15,14 @@
             HorizontalAlignment="Left"
             Margin="24 0 8 0"
             Style="{StaticResource MaterialDesignTextBlock}"
-            Text="{Binding TyrePlacement}" />
+            Text="Track" />
         <ComboBox
             Grid.Column="1"
             VerticalAlignment="Center"
             HorizontalAlignment="Right"
             Style="{StaticResource MaterialDesignOutlinedComboBox}"
-            ItemsSource="{Binding AvailableTyres}"
-            SelectedItem="{Binding SelectedTyre}"
+            ItemsSource="{Binding Tracks}"
+            SelectedItem="{Binding Track}"
             Width="200" />
     </Grid>
 </UserControl>

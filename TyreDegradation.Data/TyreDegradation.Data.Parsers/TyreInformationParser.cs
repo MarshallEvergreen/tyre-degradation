@@ -34,7 +34,7 @@ namespace TyreDegradation.Data.Parsers
                 {
                     Name = (string) tyre.Element("Name")?.Value,
                     Family = (string) tyre.Element("Family")?.Value,
-                    Type = (string) tyre.Element("Type")?.Value,
+                    Type = CompoundStringToEnum((string)tyre.Element("Type")?.Value),
                     Placement = PlacementStringToEnum((string)tyre.Element("Placement")?.Value),
                     DegradationCoefficient = Convert.ToInt32(tyre.Element("DegradationCoefficient")?.Value)
                 };
@@ -46,19 +46,26 @@ namespace TyreDegradation.Data.Parsers
 
         private TyrePlacement PlacementStringToEnum(string placement)
         {
-            switch (placement)
+            return placement switch
             {
-                case "FL":
-                    return TyrePlacement.FrontLeft;
-                case "FR":
-                    return TyrePlacement.FrontRight;
-                case "RL":
-                    return TyrePlacement.RearLeft;
-                case "RR":
-                    return TyrePlacement.RearRight;
-                default:
-                    throw new ArgumentException();
-            }
+                "FL" => TyrePlacement.FrontLeft,
+                "FR" => TyrePlacement.FrontRight,
+                "RL" => TyrePlacement.RearLeft,
+                "RR" => TyrePlacement.RearRight,
+                _ => throw new ArgumentException()
+            };
+        }
+        
+        private TyreCompound CompoundStringToEnum(string placement)
+        {
+            return placement switch
+            {
+                "SuperSoft" => TyreCompound.SuperSoft,
+                "Soft" => TyreCompound.Soft,
+                "Medium" => TyreCompound.Medium,
+                "Hard" => TyreCompound.Hard,
+                _ => throw new ArgumentException()
+            };
         }
     }
 }
