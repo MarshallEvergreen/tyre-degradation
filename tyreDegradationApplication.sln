@@ -2,6 +2,14 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TyreDegradation.App", "TyreDegradation.App\TyreDegradation.App.csproj", "{1E483793-FBBC-49DC-AA42-DFAFB4AFCD56}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TyreDegradation.Data", "TyreDegradation.Data", "{68173CD8-EC70-430C-827F-27FCA5D1A462}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TyreDegradation.Data.Parsers", "TyreDegradation.Data\TyreDegradation.Data.Parsers\TyreDegradation.Data.Parsers.csproj", "{D140DD83-19B6-4B5D-BFA5-4B16DD768CC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TyreDegradation.Data.Parsers.UnitTests", "TyreDegradation.Data\TyreDegradation.Data.Parsers.UnitTests\TyreDegradation.Data.Parsers.UnitTests.csproj", "{7AFE80FD-D656-49DB-B9E1-B06F644D4CD0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{3FD8E7AD-E4A3-4158-A861-2E9D7DF0FE4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +20,18 @@ Global
 		{1E483793-FBBC-49DC-AA42-DFAFB4AFCD56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E483793-FBBC-49DC-AA42-DFAFB4AFCD56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E483793-FBBC-49DC-AA42-DFAFB4AFCD56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D140DD83-19B6-4B5D-BFA5-4B16DD768CC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D140DD83-19B6-4B5D-BFA5-4B16DD768CC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D140DD83-19B6-4B5D-BFA5-4B16DD768CC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D140DD83-19B6-4B5D-BFA5-4B16DD768CC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AFE80FD-D656-49DB-B9E1-B06F644D4CD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AFE80FD-D656-49DB-B9E1-B06F644D4CD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AFE80FD-D656-49DB-B9E1-B06F644D4CD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AFE80FD-D656-49DB-B9E1-B06F644D4CD0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D140DD83-19B6-4B5D-BFA5-4B16DD768CC9} = {68173CD8-EC70-430C-827F-27FCA5D1A462}
+		{3FD8E7AD-E4A3-4158-A861-2E9D7DF0FE4A} = {68173CD8-EC70-430C-827F-27FCA5D1A462}
+		{7AFE80FD-D656-49DB-B9E1-B06F644D4CD0} = {3FD8E7AD-E4A3-4158-A861-2E9D7DF0FE4A}
 	EndGlobalSection
 EndGlobal
