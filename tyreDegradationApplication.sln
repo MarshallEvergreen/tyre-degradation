@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TyreDegradationApp", "TyreDegradationApp\TyreDegradationApp.csproj", "{1E483793-FBBC-49DC-AA42-DFAFB4AFCD56}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TyreDegradation.App", "TyreDegradation.App\TyreDegradation.App.csproj", "{1E483793-FBBC-49DC-AA42-DFAFB4AFCD56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

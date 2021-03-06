@@ -1,11 +1,11 @@
 ﻿using System.Windows;
 using Prism.Ioc;
-using TyreDegradationApp.Views;
+using TyreDegradation.App.Views;
 
-namespace TyreDegradationApp
+namespace TyreDegradation.App
 {
     /// <summary>
-    /// Interaction logic for App.xaml
+    ///     Interaction logic for App.xaml
     /// </summary>
     public partial class App
     {

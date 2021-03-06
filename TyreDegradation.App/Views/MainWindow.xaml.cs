@@ -1,9 +1,9 @@
 ﻿using System.Windows;
 
-namespace TyreDegradationApp.Views
+namespace TyreDegradation.App.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    ///     Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {

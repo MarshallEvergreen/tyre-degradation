@@ -3,10 +3,13 @@
                     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
     <ResourceDictionary.MergedDictionaries>
         <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="Grey" SecondaryColor="DeepOrange" />
-        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Grey.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.DeepOrange.xaml" />
-        
+        <ResourceDictionary
+            Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+        <ResourceDictionary
+            Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Grey.xaml" />
+        <ResourceDictionary
+            Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.DeepOrange.xaml" />
+
         <ResourceDictionary>
             <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="{StaticResource Primary600}" />
             <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush"
@@ -23,6 +26,6 @@
             <SolidColorBrush x:Key="SecondaryHueMidForegroundBrush"
                              Color="{StaticResource Accent700Foreground}" />
         </ResourceDictionary>
-        
+
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
