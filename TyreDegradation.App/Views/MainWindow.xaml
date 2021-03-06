@@ -3,10 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:views="clr-namespace:TyreDegradation.App.Views"
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="{Binding Title}"
-        MinHeight="600" MinWidth="450"
-        Height="900" Width="600">
+        MinHeight="900" MinWidth="900"
+        Height="900" Width="900">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -14,7 +15,7 @@
             <RowDefinition Height="60*" />
         </Grid.RowDefinitions>
         <materialDesign:Card Grid.Row="0" Padding="32" Margin="16">
-            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">Selections</TextBlock>
+            <views:SelectionCard />
         </materialDesign:Card>
         <materialDesign:Card Grid.Row="1" Padding="32" Margin="16">
             <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">Results</TextBlock>

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.IO.Abstractions.TestingHelpers;
 using FluentAssertions;
@@ -52,7 +51,7 @@ namespace TyreDegradation.Data.Parsers.UnitTests
         [TestMethod]
         public void SingleTrack_OnlyContainsInfoForOneTrack()
         {
-            var trackInfo = _trackInformationParser.ParseTrackData(SingleTrackInfoFile);
+            var trackInfo = _trackInformationParser.GetTrackData(SingleTrackInfoFile);
 
             trackInfo.Should().HaveCount(1);
         }
@@ -60,7 +59,7 @@ namespace TyreDegradation.Data.Parsers.UnitTests
         [TestMethod]
         public void SingleTrack_TrackNameParsedCorrectly()
         {
-            var trackInfo = _trackInformationParser.ParseTrackData(SingleTrackInfoFile);
+            var trackInfo = _trackInformationParser.GetTrackData(SingleTrackInfoFile);
 
             trackInfo["SilverStone"].Name.Should().Be(_silverstoneName);
         }
@@ -68,7 +67,7 @@ namespace TyreDegradation.Data.Parsers.UnitTests
         [TestMethod]
         public void SingleTrack_TrackLocationParsedCorrectly()
         {
-            var trackInfo = _trackInformationParser.ParseTrackData(SingleTrackInfoFile);
+            var trackInfo = _trackInformationParser.GetTrackData(SingleTrackInfoFile);
 
             trackInfo["SilverStone"].Location.Should().Be(_silverstoneLocation);
         }
@@ -76,7 +75,7 @@ namespace TyreDegradation.Data.Parsers.UnitTests
         [TestMethod]
         public void SingleTrack_TrackDegradationPointsParsedCorrectly()
         {
-            var trackInfo = _trackInformationParser.ParseTrackData(SingleTrackInfoFile);
+            var trackInfo = _trackInformationParser.GetTrackData(SingleTrackInfoFile);
 
             trackInfo["SilverStone"].DegradationPoints.Should().Equal(_silverstoneDegradationPoints);
         }
@@ -84,7 +83,7 @@ namespace TyreDegradation.Data.Parsers.UnitTests
         [TestMethod]
         public void MultipleTracks_ContainsInformationForCorrectNumberOfTrack()
         {
-            var trackInfo = _trackInformationParser.ParseTrackData(MultipleTrackInfoFile);
+            var trackInfo = _trackInformationParser.GetTrackData(MultipleTrackInfoFile);
 
             trackInfo.Should().HaveCount(2);
         }
@@ -92,7 +91,7 @@ namespace TyreDegradation.Data.Parsers.UnitTests
         [TestMethod]
         public void MultipleTracks_NamesParsedCorrectly()
         {
-            var trackInfo = _trackInformationParser.ParseTrackData(MultipleTrackInfoFile);
+            var trackInfo = _trackInformationParser.GetTrackData(MultipleTrackInfoFile);
 
             trackInfo["SilverStone"].Name.Should().Be(_silverstoneName);
             trackInfo["Monaco"].Name.Should().Be(_monacoName);
@@ -101,7 +100,7 @@ namespace TyreDegradation.Data.Parsers.UnitTests
         [TestMethod]
         public void MultipleTracks_LocationsParsedCorrectly()
         {
-            var trackInfo = _trackInformationParser.ParseTrackData(MultipleTrackInfoFile);
+            var trackInfo = _trackInformationParser.GetTrackData(MultipleTrackInfoFile);
 
             trackInfo["SilverStone"].Location.Should().Be(_silverstoneLocation);
             trackInfo["Monaco"].Location.Should().Be(_MonacoLocation);
@@ -110,7 +109,7 @@ namespace TyreDegradation.Data.Parsers.UnitTests
         [TestMethod]
         public void MultipleTracks_DegradationPointsParsedCorrectly()
         {
-            var trackInfo = _trackInformationParser.ParseTrackData(MultipleTrackInfoFile);
+            var trackInfo = _trackInformationParser.GetTrackData(MultipleTrackInfoFile);
 
             trackInfo["SilverStone"].DegradationPoints.Should().Equal(_silverstoneDegradationPoints);
             trackInfo["Monaco"].DegradationPoints.Should().Equal(_monacoDegradationPoints);

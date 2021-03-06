@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TyreDegradation.Data.Parser
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{3FD8E7AD-E4A3-4158-A861-2E9D7DF0FE4A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TyreDegradation.Contract", "TyreDegradation.Contract\TyreDegradation.Contract.csproj", "{A29B1C0B-0006-4CED-A04C-6C978A4343FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +30,10 @@ Global
 		{7AFE80FD-D656-49DB-B9E1-B06F644D4CD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AFE80FD-D656-49DB-B9E1-B06F644D4CD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AFE80FD-D656-49DB-B9E1-B06F644D4CD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A29B1C0B-0006-4CED-A04C-6C978A4343FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A29B1C0B-0006-4CED-A04C-6C978A4343FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A29B1C0B-0006-4CED-A04C-6C978A4343FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A29B1C0B-0006-4CED-A04C-6C978A4343FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D140DD83-19B6-4B5D-BFA5-4B16DD768CC9} = {68173CD8-EC70-430C-827F-27FCA5D1A462}

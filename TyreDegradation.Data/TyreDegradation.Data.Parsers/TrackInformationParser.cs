@@ -1,21 +1,20 @@
 ﻿using System.Collections.Generic;
 using System.IO.Abstractions;
 using System.Linq;
+using TyreDegradation.Contract.Interfaces;
+using TyreDegradation.Contract.Models;
 
 namespace TyreDegradation.Data.Parsers
 {
-    public class TrackInformationParser
+    public class TrackInformationParser : FileInformationParser, ITrackInformation
     {
-        private readonly IFileSystem _fileSystem;
-
-        public TrackInformationParser(IFileSystem fileSystem)
+        public TrackInformationParser(IFileSystem fileSystem) : base(fileSystem)
         {
-            _fileSystem = fileSystem;
         }
 
-        public Dictionary<string, TrackInformation> ParseTrackData(string file)
+        public Dictionary<string, TrackInformation> GetTrackData(string context)
         {
-            var fileData = _fileSystem.File.ReadLines(file);
+            var fileData = FileSystem.File.ReadLines(context);
             Dictionary<string, TrackInformation> data = new();
             foreach (var track in fileData)
             {

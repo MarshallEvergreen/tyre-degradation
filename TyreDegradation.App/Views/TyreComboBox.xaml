@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="TyreDegradation.App.Views.TyreComboBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:TyreDegradation.App.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d">
+    <StackPanel Orientation="Horizontal">
+        <TextBlock
+            VerticalAlignment="Center"
+            Margin="0 0 16 0"
+            Text="{Binding TyreName}" />
+        <ComboBox
+            Style="{StaticResource MaterialDesignOutlinedComboBox}"
+            IsEnabled="{Binding Path=IsChecked, ElementName=OutlinedComboBoxEnabledCheckBox}"
+            ItemsSource="{Binding AvailableTyres}"
+            Width="256" />
+    </StackPanel>
+</UserControl>

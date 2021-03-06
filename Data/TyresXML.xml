@@ -1,0 +1,226 @@
+<Tyres>
+<Tyre>
+<Name>SuperSoft - Front Tyre 1</Name>
+<Family>F1</Family>
+<Type>SuperSoft</Type>
+<Placement>FL</Placement>
+<DegradationCoefficient>10</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>SuperSoft - Front Tyre 2</Name>
+<Family>F2</Family>
+<Type>SuperSoft</Type>
+<Placement>FL</Placement>
+<DegradationCoefficient>15</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>SuperSoft - Front Tyre 3</Name>
+<Family>F1</Family>
+<Type>SuperSoft</Type>
+<Placement>FR</Placement>
+<DegradationCoefficient>10</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>SuperSoft - Front Tyre 4</Name>
+<Family>F2</Family>
+<Type>SuperSoft</Type>
+<Placement>FR</Placement>
+<DegradationCoefficient>15</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>Soft - Front Tyre 5</Name>
+<Family>F1</Family>
+<Type>Soft</Type>
+<Placement>FL</Placement>
+<DegradationCoefficient>30</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>Soft - Front Tyre 6</Name>
+<Family>F2</Family>
+<Type>Soft</Type>
+<Placement>FL</Placement>
+<DegradationCoefficient>35</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>Soft - Front Tyre 7</Name>
+<Family>F1</Family>
+<Type>Soft</Type>
+<Placement>FR</Placement>
+<DegradationCoefficient>36</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>Soft - Front Tyre 8</Name>
+<Family>F2</Family>
+<Type>Soft</Type>
+<Placement>FR</Placement>
+<DegradationCoefficient>35</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>Medium - Front Tyre 9</Name>
+<Family>F1</Family>
+<Type>Medium</Type>
+<Placement>FL</Placement>
+<DegradationCoefficient>40</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>Medium - Front Tyre 10</Name>
+<Family>F2</Family>
+<Type>Medium</Type>
+<Placement>FL</Placement>
+<DegradationCoefficient>45</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>Medium - Front Tyre 11</Name>
+<Family>F1</Family>
+<Type>Medium</Type>
+<Placement>FR</Placement>
+<DegradationCoefficient>46</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>Medium - Front Tyre 12</Name>
+<Family>F2</Family>
+<Type>Medium</Type>
+<Placement>FR</Placement>
+<DegradationCoefficient>45</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>Hard - Front Tyre 13</Name>
+<Family>F1</Family>
+<Type>Hard</Type>
+<Placement>FL</Placement>
+<DegradationCoefficient>80</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>Hard - Front Tyre 14</Name>
+<Family>F2</Family>
+<Type>Hard</Type>
+<Placement>FL</Placement>
+<DegradationCoefficient>85</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>Hard - Front Tyre 15</Name>
+<Family>F1</Family>
+<Type>Hard</Type>
+<Placement>FR</Placement>
+<DegradationCoefficient>86</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>Hard - Front Tyre 16</Name>
+<Family>F2</Family>
+<Type>Hard</Type>
+<Placement>FR</Placement>
+<DegradationCoefficient>85</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>SuperSoft - Rear 17</Name>
+<Family>F1</Family>
+<Type>SuperSoft</Type>
+<Placement>RL</Placement>
+<DegradationCoefficient>20</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>SuperSoft - Rear 18</Name>
+<Family>F2</Family>
+<Type>SuperSoft</Type>
+<Placement>RL</Placement>
+<DegradationCoefficient>25</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>SuperSoft - Rear 19</Name>
+<Family>F1</Family>
+<Type>SuperSoft</Type>
+<Placement>RR</Placement>
+<DegradationCoefficient>20</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>SuperSoft - Rear 20</Name>
+<Family>F2</Family>
+<Type>SuperSoft</Type>
+<Placement>RR</Placement>
+<DegradationCoefficient>25</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>Soft - Rear Tyre 21</Name>
+<Family>F1</Family>
+<Type>Soft</Type>
+<Placement>RL</Placement>
+<DegradationCoefficient>60</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>Soft - Rear Tyre 22</Name>
+<Family>F2</Family>
+<Type>Soft</Type>
+<Placement>RL</Placement>
+<DegradationCoefficient>65</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>Soft - Rear Tyre 23</Name>
+<Family>F1</Family>
+<Type>Soft</Type>
+<Placement>RR</Placement>
+<DegradationCoefficient>66</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>Soft - Rear Tyre 24</Name>
+<Family>F2</Family>
+<Type>Soft</Type>
+<Placement>RR</Placement>
+<DegradationCoefficient>65</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>Medium - Rear Tyre 25</Name>
+<Family>F1</Family>
+<Type>Medium</Type>
+<Placement>RL</Placement>
+<DegradationCoefficient>70</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>Medium - Rear Tyre 26</Name>
+<Family>F2</Family>
+<Type>Medium</Type>
+<Placement>RL</Placement>
+<DegradationCoefficient>75</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>Medium - Rear Tyre 27</Name>
+<Family>F1</Family>
+<Type>Medium</Type>
+<Placement>RR</Placement>
+<DegradationCoefficient>76</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>Medium - Rear Tyre 28</Name>
+<Family>F2</Family>
+<Type>Medium</Type>
+<Placement>RR</Placement>
+<DegradationCoefficient>75</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>Hard - Rear Tyre 29</Name>
+<Family>F1</Family>
+<Type>Hard</Type>
+<Placement>RL</Placement>
+<DegradationCoefficient>90</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>Hard - Rear Tyre 30</Name>
+<Family>F2</Family>
+<Type>Hard</Type>
+<Placement>RL</Placement>
+<DegradationCoefficient>95</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>Hard - Rear Tyre 31</Name>
+<Family>F1</Family>
+<Type>Hard</Type>
+<Placement>RR</Placement>
+<DegradationCoefficient>96</DegradationCoefficient>
+</Tyre>
+<Tyre>
+<Name>Hard - Rear Tyre 32</Name>
+<Family>F2</Family>
+<Type>Hard</Type>
+<Placement>RR</Placement>
+<DegradationCoefficient>95</DegradationCoefficient>
+</Tyre>
+</Tyres>

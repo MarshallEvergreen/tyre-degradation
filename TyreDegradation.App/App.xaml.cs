@@ -1,6 +1,9 @@
-﻿using System.Windows;
+﻿using System.IO.Abstractions;
+using System.Windows;
 using Prism.Ioc;
 using TyreDegradation.App.Views;
+using TyreDegradation.Contract.Interfaces;
+using TyreDegradation.Data.Parsers;
 
 namespace TyreDegradation.App
 {
@@ -16,6 +19,9 @@ namespace TyreDegradation.App
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.Register(typeof(IFileSystem), typeof(FileSystem));
+            containerRegistry.Register(typeof(ITyreInformation), typeof(TyreInformationParser));
+            containerRegistry.Register(typeof(ITrackInformation), typeof(TrackInformationParser));
         }
     }
 }
