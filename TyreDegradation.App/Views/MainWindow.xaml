@@ -6,21 +6,15 @@
         xmlns:views="clr-namespace:TyreDegradation.App.Views"
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="{Binding Title}"
-        MinHeight="900" MinWidth="900"
-        Height="900" Width="900">
+        MinHeight="800" MinWidth="700"
+        Height="800" Width="700">
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40*" />
             <RowDefinition Height="60*" />
         </Grid.RowDefinitions>
-        <materialDesign:Card Grid.Row="0" Padding="32" Margin="16">
-            <views:SelectionCard />
-        </materialDesign:Card>
-        <materialDesign:Card Grid.Row="1" Padding="32" Margin="16">
-            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">Results</TextBlock>
-        </materialDesign:Card>
-        <!-- <ContentControl Grid.Row="0" prism:RegionManager.RegionName="SelectionRegion" /> -->
-        <!-- <ContentControl Grid.Row="1" prism:RegionManager.RegionName="ResultsRegion" /> -->
+        <views:SelectionCard Grid.Row="0" />
+        <views:ResultsCard Grid.Row="1" />
     </Grid>
 </Window>
