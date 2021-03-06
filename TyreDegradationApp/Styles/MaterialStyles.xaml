@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+    <ResourceDictionary.MergedDictionaries>
+        <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="Grey" SecondaryColor="DeepOrange" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Grey.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.DeepOrange.xaml" />
+        
+        <ResourceDictionary>
+            <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="{StaticResource Primary600}" />
+            <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush"
+                             Color="{StaticResource Primary600Foreground}" />
+            <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="{StaticResource Primary700}" />
+            <SolidColorBrush x:Key="PrimaryHueMidForegroundBrush" Color="{StaticResource Primary700Foreground}" />
+            <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="{StaticResource Primary800}" />
+            <SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush"
+                             Color="{StaticResource Primary800Foreground}" />
+        </ResourceDictionary>
+
+        <ResourceDictionary>
+            <SolidColorBrush x:Key="SecondaryHueMidBrush" Color="{StaticResource Accent700}" />
+            <SolidColorBrush x:Key="SecondaryHueMidForegroundBrush"
+                             Color="{StaticResource Accent700Foreground}" />
+        </ResourceDictionary>
+        
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
