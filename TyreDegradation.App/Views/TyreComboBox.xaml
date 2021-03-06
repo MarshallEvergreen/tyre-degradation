@@ -14,13 +14,13 @@
             HorizontalAlignment="Left"
             Margin="0 0 16 0"
             Style="{StaticResource MaterialDesignTextBlock}"
-            Text="{Binding TyreName}" />
+            Text="{Binding TyrePlacement}" />
         <ComboBox
             VerticalAlignment="Center"
             HorizontalAlignment="Center"
             Style="{StaticResource MaterialDesignOutlinedComboBox}"
-            IsEnabled="{Binding Path=IsChecked, ElementName=OutlinedComboBoxEnabledCheckBox}"
             ItemsSource="{Binding AvailableTyres}"
+            SelectedItem="{Binding SelectedTyre}"
             Width="200" />
     </StackPanel>
 </UserControl>

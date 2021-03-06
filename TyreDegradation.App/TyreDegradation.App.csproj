@@ -16,6 +16,7 @@
     <ItemGroup>
       <ProjectReference Include="..\TyreDegradation.Contract\TyreDegradation.Contract.csproj" />
       <ProjectReference Include="..\TyreDegradation.Data\TyreDegradation.Data.Parsers\TyreDegradation.Data.Parsers.csproj" />
+      <ProjectReference Include="..\TyreDegradation.Services.Results\TyreDegradation.Services.Results.csproj" />
     </ItemGroup>
 
 </Project>

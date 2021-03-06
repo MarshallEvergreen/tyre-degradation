@@ -3,10 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:TyreDegradation.App.Views"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             xmlns:mvvm="http://prismlibrary.com/"
-             mvvm:ViewModelLocator.AutoWireViewModel="True"
              mc:Ignorable="d">
     <GroupBox
         Header="Front Right"
@@ -30,11 +27,10 @@
                 </StackPanel>
             </DataTemplate>
         </GroupBox.HeaderTemplate>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50*" />
-                <RowDefinition Height="50*" />
-            </Grid.RowDefinitions>
-        </Grid>
+        <StackPanel Orientation="Vertical">
+            <TextBlock
+                Text="{Binding Average}" />
+            <TextBlock Text="{Binding Range}" />
+        </StackPanel>
     </GroupBox>
 </UserControl>
