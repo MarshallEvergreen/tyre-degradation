@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using Prism.Mvvm;
 using TyreDegradation.Contract.Models;
 using TyreDegradation.Services.Results;

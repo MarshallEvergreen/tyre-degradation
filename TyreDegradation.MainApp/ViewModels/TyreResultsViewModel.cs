@@ -1,4 +1,5 @@
-﻿using Prism.Mvvm;
+﻿using System;
+using Prism.Mvvm;
 using TyreDegradation.Contract.Enums;
 using TyreDegradation.Services.Results;
 
@@ -6,25 +7,27 @@ namespace TyreDegradation.MainApp.ViewModels
 {
     public class TyreResultsViewModel : BindableBase
     {
-        private double _average;
-        private double _range;
+        private string _average;
+        private string _range;
 
         public TyreResultsViewModel(ResultsService resultsService, TyrePlacement placement)
         {
             resultsService.AverageRecalculated[placement] += result =>
             {
-                Average = result.Average;
-                Range = result.Range;
+                Average = Convert.ToInt32(result.Average).ToString();
+                Range = Convert.ToInt32(result.Range).ToString();
             };
+            Average = "NA";
+            Range =  "NA";
         }
 
-        public double Average
+        public string Average
         {
             get => _average;
             set => SetProperty(ref _average, value);
         }
 
-        public double Range
+        public string Range
         {
             get => _range;
             set => SetProperty(ref _range, value);

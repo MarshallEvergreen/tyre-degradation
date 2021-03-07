@@ -8,7 +8,7 @@ namespace TyreDegradation.Services.Results
 {
     public class ResultsService
     {
-        private Dictionary<TyrePlacement, TyreInformation> _selectedTyres;
+        private readonly Dictionary<TyrePlacement, TyreInformation> _selectedTyres;
         private TrackInformation _selectedTrack;
         private int _temperature;
         private readonly DegradationCalculator _degradationCalculator;
@@ -67,6 +67,7 @@ namespace TyreDegradation.Services.Results
             }
             foreach (var (placement, action) in AverageRecalculated)
             {
+                if (_selectedTyres[placement] == null) continue;
                 var result = CalculateDegradationResults(placement);
                 action?.Invoke(result);
             }

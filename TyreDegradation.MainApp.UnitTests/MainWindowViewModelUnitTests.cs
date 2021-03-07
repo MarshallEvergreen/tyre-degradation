@@ -1,18 +1,148 @@
-using NUnit.Framework;
+using System.Collections.Generic;
+using FluentAssertions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+using TyreDegradation.Contract.Interfaces;
+using TyreDegradation.MainApp.ViewModels;
+using TyreDegradation.Services.Results;
 
 namespace TyreDegradation.MainApp.UnitTests
 {
-    public class Tests
+    [TestClass]
+    public class MainWindowViewModelUnitTests
     {
-        [SetUp]
-        public void Setup()
+        private MockTyreInformationBuilder _mockTyreInformationBuilder;
+        private Mock<ITyreInformation> _tyreInformation;
+
+        private MockTrackInformationBuilder _mockTrackInformationBuilder;
+        private Mock<ITrackInformation> _trackInformation;
+        private ResultsService _resultsService;
+        private MainWindowViewModel _mainWindowViewModel;
+
+        [TestInitialize]
+        public void Initialize()
         {
+            _mockTyreInformationBuilder = new MockTyreInformationBuilder();
+            _tyreInformation = _mockTyreInformationBuilder.Build();
+
+            _mockTrackInformationBuilder = new MockTrackInformationBuilder();
+            _trackInformation = _mockTrackInformationBuilder.Build();
+            
+            _resultsService = new ResultsService();
+            _mainWindowViewModel = new MainWindowViewModel(
+                _tyreInformation.Object, 
+                _trackInformation.Object, 
+                _resultsService);
         }
 
-        [Test]
-        public void Test1()
+        private void SelectTyresAndATrack()
         {
-            Assert.Pass();
+            _mainWindowViewModel.SelectionCard.FrontLeft.SelectedTyre = "Tyre 1";
+            _mainWindowViewModel.SelectionCard.FrontRight.SelectedTyre = "Tyre 2";
+            _mainWindowViewModel.SelectionCard.RearLeft.SelectedTyre = "Tyre 3";
+            _mainWindowViewModel.SelectionCard.RearRight.SelectedTyre = "Tyre 4";
+            _mainWindowViewModel.SelectionCard.TrackSelector.Track = "SomeTrack";
+        }
+
+        private void AveragesAndRangesAre(string average, string range)
+        {
+            _mainWindowViewModel.ResultsCard.FrontLeft.Average.Should().Be(average);
+            _mainWindowViewModel.ResultsCard.FrontLeft.Range.Should().Be(range);
+            
+            _mainWindowViewModel.ResultsCard.FrontRight.Average.Should().Be(average);
+            _mainWindowViewModel.ResultsCard.FrontRight.Range.Should().Be(range);
+            
+            _mainWindowViewModel.ResultsCard.RearLeft.Average.Should().Be(average);
+            _mainWindowViewModel.ResultsCard.RearLeft.Range.Should().Be(range);
+            
+            _mainWindowViewModel.ResultsCard.RearRight.Average.Should().Be(average);
+            _mainWindowViewModel.ResultsCard.RearRight.Range.Should().Be(range);
+        }
+
+        [TestMethod]
+        public void TyrePlacement_NameIsCorrectForEachViewModel()
+        {
+            _mainWindowViewModel.SelectionCard.FrontLeft.TyrePlacement.Should().Be("FrontLeft");
+            _mainWindowViewModel.SelectionCard.FrontRight.TyrePlacement.Should().Be("FrontRight");
+            _mainWindowViewModel.SelectionCard.RearLeft.TyrePlacement.Should().Be("RearLeft");
+            _mainWindowViewModel.SelectionCard.RearRight.TyrePlacement.Should().Be("RearRight");
+        }
+        
+        [TestMethod]
+        public void TyrePlacement_EachViewModelHasTheRightTyres()
+        {
+
+            _mainWindowViewModel.SelectionCard
+                .FrontLeft.AvailableTyres.Should().BeEquivalentTo(new List<string>{"Tyre 1"});
+            
+            _mainWindowViewModel.SelectionCard
+                .FrontRight.AvailableTyres.Should().BeEquivalentTo(new List<string>{"Tyre 2"});
+            
+            _mainWindowViewModel.SelectionCard
+                .RearLeft.AvailableTyres.Should().BeEquivalentTo(new List<string>{"Tyre 3"});
+            
+            _mainWindowViewModel.SelectionCard
+                .RearRight.AvailableTyres.Should().BeEquivalentTo(new List<string>{"Tyre 4"});
+        }
+        
+        [TestMethod]
+        public void Tracks_CorrectTracksAreAvailable()
+        {
+            _mainWindowViewModel.SelectionCard
+                .TrackSelector.Tracks.Should().BeEquivalentTo(new List<string>{"SomeTrack"});
+        }
+        
+        [TestMethod]
+        public void Temperature_DefaultTemperatureIsSet()
+        {
+            _mainWindowViewModel.SelectionCard
+                .TemperatureSelector.Temperature.Should().Be("25");
+        }
+        
+        [TestMethod]
+        public void Results_NoResultsAvailable_WhenTyresAndTrackNotSelected()
+        {
+            AveragesAndRangesAre("NA", "NA");
+        }
+        
+        [TestMethod]
+        public void Results_NotAvailable_WhenTyresSelected_ButTrackNotSelected()
+        {
+
+            _mainWindowViewModel.SelectionCard.FrontLeft.SelectedTyre = "Tyre 1";
+            _mainWindowViewModel.SelectionCard.FrontRight.SelectedTyre = "Tyre 2";
+            _mainWindowViewModel.SelectionCard.RearLeft.SelectedTyre = "Tyre 3";
+            _mainWindowViewModel.SelectionCard.RearRight.SelectedTyre = "Tyre 4";
+            
+            AveragesAndRangesAre("NA", "NA");
+        }
+        
+        [TestMethod]
+        public void Results_NotAvailable_WhenTyresNotSelected_ButTrackSelected()
+        {
+            _mainWindowViewModel.SelectionCard.TrackSelector.Track = "SomeTrack";
+            
+            AveragesAndRangesAre("NA", "NA");
+        }
+        
+        [TestMethod]
+        public void Results_Available_WhenTyresSelected_AndTrackSelected()
+        {
+            SelectTyresAndATrack();
+            
+            AveragesAndRangesAre("47", "31");
+        }
+        
+        [TestMethod]
+        public void Results_Update_WhenTemperatureChanges()
+        {
+            SelectTyresAndATrack();
+            
+            AveragesAndRangesAre("47", "31");
+            
+            _mainWindowViewModel.SelectionCard.TemperatureSelector.Temperature = "50";
+            
+            AveragesAndRangesAre("94", "62");
         }
     }
 }
