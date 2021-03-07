@@ -9,18 +9,39 @@ namespace TyreDegradation.MainApp.ViewModels
     {
         private string _average;
         private string _range;
-
+        private string _averageColour;
+        private string _rangeColour;
+        private const string Transparent = "#00FFFFFF";
         public TyreResultsViewModel(ResultsService resultsService, TyrePlacement placement)
         {
+            _averageColour = Transparent;
+            _rangeColour = Transparent;
             resultsService.AverageRecalculated[placement] += result =>
             {
-                Average = Convert.ToInt32(result.Average).ToString();
-                Range = Convert.ToInt32(result.Range).ToString();
+                var average = Convert.ToInt32(result.Average);
+                var range = Convert.ToInt32(result.Range);
+                
+                AverageColour = GetColourForValue(average);
+                Average = average.ToString();
+                
+                RangeColour = GetColourForValue(range);
+                Range = range.ToString();
             };
             Average = "NA";
             Range =  "NA";
         }
 
+        private string GetColourForValue(int value)
+        {
+            return value switch
+            {
+                < 999 => "Green",
+                > 999 and < 3000 => "Orange",
+                > 3000 => "Red",
+                _ => Transparent
+            };
+        }
+        
         public string Average
         {
             get => _average;
@@ -31,6 +52,18 @@ namespace TyreDegradation.MainApp.ViewModels
         {
             get => _range;
             set => SetProperty(ref _range, value);
+        }
+        
+        public string AverageColour
+        {
+            get => _averageColour;
+            set => SetProperty(ref _averageColour, value);
+        }
+        
+        public string RangeColour
+        {
+            get => _rangeColour;
+            set => SetProperty(ref _rangeColour, value);
         }
     }
 }

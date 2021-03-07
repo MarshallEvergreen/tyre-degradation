@@ -58,6 +58,21 @@ namespace TyreDegradation.MainApp.UnitTests
             _mainWindowViewModel.ResultsCard.RearRight.Average.Should().Be(average);
             _mainWindowViewModel.ResultsCard.RearRight.Range.Should().Be(range);
         }
+        
+        private void AverageAndRangeColoursAre(string averageColour, string rangeColour)
+        {
+            _mainWindowViewModel.ResultsCard.FrontLeft.AverageColour.Should().Be(averageColour);
+            _mainWindowViewModel.ResultsCard.FrontLeft.RangeColour.Should().Be(rangeColour);
+            
+            _mainWindowViewModel.ResultsCard.FrontRight.AverageColour.Should().Be(averageColour);
+            _mainWindowViewModel.ResultsCard.FrontRight.RangeColour.Should().Be(rangeColour);
+            
+            _mainWindowViewModel.ResultsCard.RearLeft.AverageColour.Should().Be(averageColour);
+            _mainWindowViewModel.ResultsCard.RearLeft.RangeColour.Should().Be(rangeColour);
+            
+            _mainWindowViewModel.ResultsCard.RearRight.AverageColour.Should().Be(averageColour);
+            _mainWindowViewModel.ResultsCard.RearRight.RangeColour.Should().Be(rangeColour);
+        }
 
         [TestMethod]
         public void TyrePlacement_NameIsCorrectForEachViewModel()
@@ -143,6 +158,34 @@ namespace TyreDegradation.MainApp.UnitTests
             _mainWindowViewModel.SelectionCard.TemperatureSelector.Temperature = "50";
             
             AveragesAndRangesAre("94", "62");
+        }
+        
+        [TestMethod]
+        public void ResultsBackground_GreenWhenInRightRange()
+        {
+            SelectTyresAndATrack();
+            
+            AverageAndRangeColoursAre("Green", "Green");
+        }
+        
+        [TestMethod]
+        public void ResultsBackground_OrangeWhenInRightRange()
+        {
+            SelectTyresAndATrack();
+            
+            _mainWindowViewModel.SelectionCard.TemperatureSelector.Temperature = "900";
+            
+            AverageAndRangeColoursAre("Orange", "Orange");
+        }
+        
+        [TestMethod]
+        public void ResultsBackground_RedWhenInRightRange()
+        {
+            SelectTyresAndATrack();
+            
+            _mainWindowViewModel.SelectionCard.TemperatureSelector.Temperature = "90000";
+            
+            AverageAndRangeColoursAre("Red", "Red");
         }
     }
 }

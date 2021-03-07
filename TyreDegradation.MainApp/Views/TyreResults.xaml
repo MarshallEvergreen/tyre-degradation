@@ -27,10 +27,37 @@
                 </StackPanel>
             </DataTemplate>
         </GroupBox.HeaderTemplate>
-        <StackPanel Orientation="Vertical">
-            <TextBlock
-                Text="{Binding Average}" />
-            <TextBlock Text="{Binding Range}" />
-        </StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*" />
+                <ColumnDefinition Width="50*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50*" />
+                <RowDefinition Height="50*" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Average" />
+            <materialDesign:ColorZone
+                Grid.Row="0" Grid.Column="1"
+                Background="{Binding AverageColour}"
+                Padding="0 8 0 8">
+                <TextBlock
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Text="{Binding Average}" />
+            </materialDesign:ColorZone>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Range" />
+            <materialDesign:ColorZone
+                Grid.Row="1" Grid.Column="1"
+                Background="{Binding RangeColour}"
+                Padding="0 8 0 8">
+                <TextBlock
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Text="{Binding Range}" />
+            </materialDesign:ColorZone>
+        </Grid>
     </GroupBox>
 </UserControl>
