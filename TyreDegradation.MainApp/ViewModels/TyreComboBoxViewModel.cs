@@ -26,8 +26,9 @@ namespace TyreDegradation.MainApp.ViewModels
             _availableTyreInformation = new Dictionary<string, TyreInformation>();
             foreach (var tyre in availableTyres[_tyrePlacement])
             {
-                AvailableTyres.Add(tyre.Name);
-                _availableTyreInformation[tyre.Name] = tyre;
+                var tyreNameAndFamily = tyre.Name + " - " + tyre.Family;
+                AvailableTyres.Add(tyreNameAndFamily);
+                _availableTyreInformation[tyreNameAndFamily] = tyre;
             }
         }
         
