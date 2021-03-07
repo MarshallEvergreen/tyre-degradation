@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using TyreDegradation.Business.Calculations;
+using TyreDegradation.Business.Validation;
 using TyreDegradation.Contract.Enums;
 using TyreDegradation.Contract.Models;
 
@@ -12,10 +13,10 @@ namespace TyreDegradation.Services.Results
         private TrackInformation _selectedTrack;
         private int _temperature;
         private readonly DegradationCalculator _degradationCalculator;
-
+        private readonly TyreSelectionValidator _tyreSelectionValidator;
         public ResultsService()
         {
-            AverageRecalculated = new Dictionary<TyrePlacement, Action<DegradationResults>>
+            DegradationResults = new Dictionary<TyrePlacement, Action<DegradationResults>>
             {
                 {TyrePlacement.FrontLeft, null},
                 {TyrePlacement.FrontRight, null},
@@ -31,20 +32,17 @@ namespace TyreDegradation.Services.Results
             };
             
             _degradationCalculator = new DegradationCalculator();
+            _tyreSelectionValidator = new TyreSelectionValidator();
         }
 
-        public readonly Dictionary<TyrePlacement, Action<DegradationResults>> AverageRecalculated;
+        public readonly Dictionary<TyrePlacement, Action<DegradationResults>> DegradationResults;
+        public Action SelectionsValid;
+        public Action<string> SelectionsInvalid;
 
         public void SetSelectedTyre(TyrePlacement placement, TyreInformation tyreInformation)
         {
             _selectedTyres[placement] = tyreInformation;
-            if (_selectedTrack is null)
-            {
-                return;
-            }
-
-            var result = CalculateDegradationResults(placement);
-            AverageRecalculated[placement].Invoke(result);
+            RecalculateForEachTyre();
         }
 
         public void SetSelectedTrack(TrackInformation trackInformation)
@@ -61,15 +59,27 @@ namespace TyreDegradation.Services.Results
 
         private void RecalculateForEachTyre()
         {
+            foreach (var (placement, _) in DegradationResults)
+            {
+                if (_selectedTyres[placement] == null) return;
+            }
             if (_selectedTrack is null)
             {
                 return;
             }
-            foreach (var (placement, action) in AverageRecalculated)
+
+            var validationResult = _tyreSelectionValidator.Validate(_selectedTyres);
+            if (validationResult.Result == false)
             {
-                if (_selectedTyres[placement] == null) continue;
+                SelectionsInvalid.Invoke(validationResult.Message);
+                return;
+            }
+            
+            SelectionsValid.Invoke();
+            foreach (var (placement, action) in DegradationResults)
+            {
                 var result = CalculateDegradationResults(placement);
-                action?.Invoke(result);
+                action.Invoke(result);
             }
         } 
 

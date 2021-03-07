@@ -5,8 +5,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\TyreDegradation.Business.Calculations\TyreDegradation.Business.Calculations.csproj" />
-      <ProjectReference Include="..\TyreDegradation.Business.Validation\TyreDegradation.Business.Validation.csproj" />
       <ProjectReference Include="..\TyreDegradation.Contract\TyreDegradation.Contract.csproj" />
     </ItemGroup>
 

@@ -11,10 +11,12 @@ namespace TyreDegradation.MainApp.ViewModels
         {
             SelectionCard = new SelectionCardViewModel(tyreInformation, trackInformation, resultsService);
             ResultsCard = new ResultsCardViewModel(resultsService);
+            SelectionWarning = new SelectionWarningViewModel(resultsService);
         }
 
         public string Title => "Tyre Degradation Application";
         public SelectionCardViewModel SelectionCard { get; }
         public ResultsCardViewModel ResultsCard { get; }
+        public SelectionWarningViewModel SelectionWarning { get; }
     }
 }

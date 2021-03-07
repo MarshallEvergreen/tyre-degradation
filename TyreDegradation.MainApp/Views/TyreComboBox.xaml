@@ -5,14 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d">
-    <Grid>
-        <ComboBox
-            materialDesign:HintAssist.Hint="{Binding TyrePlacement}"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"
-            Style="{StaticResource MaterialDesignOutlinedComboBox}"
-            ItemsSource="{Binding AvailableTyres}"
-            SelectedItem="{Binding SelectedTyre}"
-            Width="200" />
-    </Grid>
+    <ComboBox
+        materialDesign:HintAssist.Hint="{Binding TyrePlacement}"
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center"
+        Margin="0 8 0 8"
+        Style="{StaticResource MaterialDesignOutlinedComboBox}"
+        ItemsSource="{Binding AvailableTyres}"
+        SelectedItem="{Binding SelectedTyre}"
+        Width="200" />
 </UserControl>

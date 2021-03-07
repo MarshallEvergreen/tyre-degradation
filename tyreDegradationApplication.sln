@@ -30,6 +30,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TyreDegradation.App.UnitsTe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TyreDegradation.MainApp.UnitTests", "TyreDegradation.MainApp.UnitTests\TyreDegradation.MainApp.UnitTests.csproj", "{B4F7661D-AEDB-4A68-A76F-ADC18AE4AD18}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TyreDegradation.Business.Validation", "TyreDegradation.Business.Validation\TyreDegradation.Business.Validation.csproj", "{5C496119-9721-45E5-801B-C598C16F6786}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TyreDegradation.Business.Validation.UnitTests", "TyreDegradation.Business.Validation.UnitTests\TyreDegradation.Business.Validation.UnitTests.csproj", "{6C91AD31-16B5-44D6-A867-ED2C0897FBC7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,6 +72,14 @@ Global
 		{B4F7661D-AEDB-4A68-A76F-ADC18AE4AD18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4F7661D-AEDB-4A68-A76F-ADC18AE4AD18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4F7661D-AEDB-4A68-A76F-ADC18AE4AD18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C496119-9721-45E5-801B-C598C16F6786}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C496119-9721-45E5-801B-C598C16F6786}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C496119-9721-45E5-801B-C598C16F6786}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C496119-9721-45E5-801B-C598C16F6786}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C91AD31-16B5-44D6-A867-ED2C0897FBC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C91AD31-16B5-44D6-A867-ED2C0897FBC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C91AD31-16B5-44D6-A867-ED2C0897FBC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C91AD31-16B5-44D6-A867-ED2C0897FBC7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D140DD83-19B6-4B5D-BFA5-4B16DD768CC9} = {68173CD8-EC70-430C-827F-27FCA5D1A462}
@@ -80,5 +92,7 @@ Global
 		{1E483793-FBBC-49DC-AA42-DFAFB4AFCD56} = {0B9B186A-4BFB-4305-9808-67C00B8CAB16}
 		{79C8375A-ED8F-4148-A161-E68B99C31CD6} = {0B9B186A-4BFB-4305-9808-67C00B8CAB16}
 		{B4F7661D-AEDB-4A68-A76F-ADC18AE4AD18} = {79C8375A-ED8F-4148-A161-E68B99C31CD6}
+		{5C496119-9721-45E5-801B-C598C16F6786} = {6697BB3A-7289-48CD-A6E7-23A96AB63B78}
+		{6C91AD31-16B5-44D6-A867-ED2C0897FBC7} = {AF1F5D72-FEE7-4081-9854-55DF14503602}
 	EndGlobalSection
 EndGlobal
