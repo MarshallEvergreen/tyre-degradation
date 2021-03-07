@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace TyreDegradation.App.Views
+namespace TyreDegradation.MainApp.Views
 {
     /// <summary>
     ///     Interaction logic for MainWindow.xaml

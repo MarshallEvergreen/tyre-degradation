@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TyreDegradation.App", "TyreDegradation.App\TyreDegradation.App.csproj", "{1E483793-FBBC-49DC-AA42-DFAFB4AFCD56}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TyreDegradation.MainApp", "TyreDegradation.MainApp\TyreDegradation.MainApp.csproj", "{1E483793-FBBC-49DC-AA42-DFAFB4AFCD56}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TyreDegradation.Data", "TyreDegradation.Data", "{68173CD8-EC70-430C-827F-27FCA5D1A462}"
 EndProject
@@ -23,6 +23,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{AF1F5D72-FEE7-4081-9854-55DF14503602}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TyreDegradation.Business.Calculations.UnitTests", "TyreDegradation.Business.Calculations.UnitTests\TyreDegradation.Business.Calculations.UnitTests.csproj", "{D2FAEB27-8606-4DDE-A718-685E19819A71}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TyreDegradation.App", "TyreDegradation.App", "{0B9B186A-4BFB-4305-9808-67C00B8CAB16}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TyreDegradation.App.UnitsTests", "TyreDegradation.App.UnitsTests", "{79C8375A-ED8F-4148-A161-E68B99C31CD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TyreDegradation.MainApp.UnitTests", "TyreDegradation.MainApp.UnitTests\TyreDegradation.MainApp.UnitTests.csproj", "{A01DB6CA-F4FB-40BA-B3A4-CEF0C2D31C34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,6 +64,10 @@ Global
 		{D2FAEB27-8606-4DDE-A718-685E19819A71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2FAEB27-8606-4DDE-A718-685E19819A71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2FAEB27-8606-4DDE-A718-685E19819A71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A01DB6CA-F4FB-40BA-B3A4-CEF0C2D31C34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A01DB6CA-F4FB-40BA-B3A4-CEF0C2D31C34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A01DB6CA-F4FB-40BA-B3A4-CEF0C2D31C34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A01DB6CA-F4FB-40BA-B3A4-CEF0C2D31C34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D140DD83-19B6-4B5D-BFA5-4B16DD768CC9} = {68173CD8-EC70-430C-827F-27FCA5D1A462}
@@ -67,5 +77,8 @@ Global
 		{C951704E-E5F8-429A-8D35-AEE864EE71AE} = {9B1C7046-7CF9-4998-8063-9136DB33761E}
 		{AF1F5D72-FEE7-4081-9854-55DF14503602} = {6697BB3A-7289-48CD-A6E7-23A96AB63B78}
 		{D2FAEB27-8606-4DDE-A718-685E19819A71} = {AF1F5D72-FEE7-4081-9854-55DF14503602}
+		{1E483793-FBBC-49DC-AA42-DFAFB4AFCD56} = {0B9B186A-4BFB-4305-9808-67C00B8CAB16}
+		{79C8375A-ED8F-4148-A161-E68B99C31CD6} = {0B9B186A-4BFB-4305-9808-67C00B8CAB16}
+		{A01DB6CA-F4FB-40BA-B3A4-CEF0C2D31C34} = {79C8375A-ED8F-4148-A161-E68B99C31CD6}
 	EndGlobalSection
 EndGlobal

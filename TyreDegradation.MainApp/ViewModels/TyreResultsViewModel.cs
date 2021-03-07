@@ -2,7 +2,7 @@
 using TyreDegradation.Contract.Enums;
 using TyreDegradation.Services.Results;
 
-namespace TyreDegradation.App.ViewModels
+namespace TyreDegradation.MainApp.ViewModels
 {
     public class TyreResultsViewModel : BindableBase
     {

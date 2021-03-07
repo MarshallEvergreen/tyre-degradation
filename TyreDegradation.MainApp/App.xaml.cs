@@ -1,12 +1,12 @@
 ﻿using System.IO.Abstractions;
 using System.Windows;
 using Prism.Ioc;
-using TyreDegradation.App.Views;
 using TyreDegradation.Contract.Interfaces;
 using TyreDegradation.Data.Parsers;
+using TyreDegradation.MainApp.Views;
 using TyreDegradation.Services.Results;
 
-namespace TyreDegradation.App
+namespace TyreDegradation.MainApp
 {
     /// <summary>
     ///     Interaction logic for App.xaml

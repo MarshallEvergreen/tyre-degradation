@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace TyreDegradation.App.Views
+namespace TyreDegradation.MainApp.Views
 {
     public partial class ResultsCard : UserControl
     {

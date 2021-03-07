@@ -4,7 +4,7 @@ using Prism.Mvvm;
 using TyreDegradation.Contract.Models;
 using TyreDegradation.Services.Results;
 
-namespace TyreDegradation.App.ViewModels
+namespace TyreDegradation.MainApp.ViewModels
 {
     public class TrackSelectorComboBoxViewModel : BindableBase
     {

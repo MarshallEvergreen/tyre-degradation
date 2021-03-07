@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace TyreDegradation.App.Views
+namespace TyreDegradation.MainApp.Views
 {
     public partial class TemperatureInput : UserControl
     {

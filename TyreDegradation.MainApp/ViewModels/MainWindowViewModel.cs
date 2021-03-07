@@ -1,6 +1,6 @@
 ﻿using Prism.Mvvm;
 
-namespace TyreDegradation.App.ViewModels
+namespace TyreDegradation.MainApp.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {
