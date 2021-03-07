@@ -22,6 +22,7 @@ namespace TyreDegradation.App.ViewModels
             RearLeft = new TyreComboBoxViewModel(resultsService, TyrePlacement.RearLeft, tyreInfo);
             RearRight = new TyreComboBoxViewModel(resultsService, TyrePlacement.RearRight, tyreInfo);
             TrackSelector = new TrackSelectorComboBoxViewModel(resultsService, trackInfo);
+            TemperatureSelector = new TemperatureSelectorViewModel(resultsService);
         }
 
         public TyreComboBoxViewModel FrontLeft { get; }
@@ -29,5 +30,6 @@ namespace TyreDegradation.App.ViewModels
         public TyreComboBoxViewModel RearRight { get; }
         public TyreComboBoxViewModel RearLeft { get; }
         public TrackSelectorComboBoxViewModel TrackSelector { get; }
+        public TemperatureSelectorViewModel TemperatureSelector { get; }
     }
 }

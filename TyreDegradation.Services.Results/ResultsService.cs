@@ -10,6 +10,7 @@ namespace TyreDegradation.Services.Results
     {
         private Dictionary<TyrePlacement, TyreInformation> _selectedTyres;
         private TrackInformation _selectedTrack;
+        private int _temperature;
         private readonly DegradationCalculator _degradationCalculator;
 
         public ResultsService()
@@ -49,16 +50,31 @@ namespace TyreDegradation.Services.Results
         public void SetSelectedTrack(TrackInformation trackInformation)
         {
             _selectedTrack = trackInformation;
+            RecalculateForEachTyre();
+        }
+        
+        public void SetTemperature(int temperature)
+        {
+            _temperature = temperature;
+            RecalculateForEachTyre();
+        }
+
+        private void RecalculateForEachTyre()
+        {
+            if (_selectedTrack is null)
+            {
+                return;
+            }
             foreach (var (placement, action) in AverageRecalculated)
             {
                 var result = CalculateDegradationResults(placement);
                 action?.Invoke(result);
             }
-        }
+        } 
 
         private DegradationResults CalculateDegradationResults(TyrePlacement placement)
         {
-            return _degradationCalculator.Calculate(_selectedTyres[placement], _selectedTrack.DegradationPoints, 100);
+            return _degradationCalculator.Calculate(_selectedTyres[placement], _selectedTrack.DegradationPoints, _temperature);
         }
     }
 }

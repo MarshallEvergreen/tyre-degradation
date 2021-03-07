@@ -44,6 +44,7 @@
             <local:TyreComboBox Grid.Row="1" Grid.Column="0" DataContext="{Binding RearLeft}" />
             <local:TyreComboBox Grid.Row="1" Grid.Column="1" DataContext="{Binding RearRight}" />
             <local:TrackSelectorComboBox Grid.Row="2" Grid.Column="0" DataContext="{Binding TrackSelector}" />
+            <local:TemperatureInput Grid.Row="2" Grid.Column="1" DataContext="{Binding TemperatureSelector}" />
         </Grid>
     </GroupBox>
 </UserControl>
