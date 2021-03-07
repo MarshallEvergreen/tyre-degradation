@@ -13,10 +13,10 @@ namespace TyreDegradation.MainApp.ViewModels
             RearLeft = new TyreResultsViewModel(resultsService, TyrePlacement.RearLeft);
             RearRight = new TyreResultsViewModel(resultsService, TyrePlacement.RearRight);
         }
+
         public TyreResultsViewModel FrontLeft { get; }
         public TyreResultsViewModel FrontRight { get; }
         public TyreResultsViewModel RearRight { get; }
         public TyreResultsViewModel RearLeft { get; }
-
     }
 }

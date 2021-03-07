@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using Prism.Mvvm;
 using TyreDegradation.Services.Results;
 
@@ -28,7 +27,7 @@ namespace TyreDegradation.MainApp.ViewModels
             get => _warningMessage;
             set => SetProperty(ref _warningMessage, value);
         }
-        
+
         public Visibility WarningVisibility
         {
             get => _visibility;

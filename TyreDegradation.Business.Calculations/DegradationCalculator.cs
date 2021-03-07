@@ -25,7 +25,7 @@ namespace TyreDegradation.Business.Calculations
         {
             var coefficient = _degradationCoefficients[tyreInformation.Type];
             var pointTyreDegradations = trackPoints.Select(trackPoint =>
-                (trackPoint * temperature) / (tyreInformation.DegradationCoefficient * coefficient)).ToList();
+                trackPoint * temperature / (tyreInformation.DegradationCoefficient * coefficient)).ToList();
 
             return new DegradationResults
             {

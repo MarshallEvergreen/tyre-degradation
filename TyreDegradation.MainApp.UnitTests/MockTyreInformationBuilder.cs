@@ -17,6 +17,8 @@ namespace TyreDegradation.MainApp.UnitTests
             _tyreInformation = new Dictionary<TyrePlacement, List<TyreInformation>>();
         }
 
+        public IReadOnlyDictionary<TyrePlacement, List<TyreInformation>> Tyres => _tyreInformation;
+
         public Mock<ITyreInformation> Build()
         {
             AddFrontLeftTyres();
@@ -27,8 +29,6 @@ namespace TyreDegradation.MainApp.UnitTests
             _mock.Setup(m => m.GetTyreData(It.IsAny<string>())).Returns(_tyreInformation);
             return _mock;
         }
-
-        public IReadOnlyDictionary<TyrePlacement, List<TyreInformation>> Tyres => _tyreInformation;
 
         private void AddFrontLeftTyres()
         {

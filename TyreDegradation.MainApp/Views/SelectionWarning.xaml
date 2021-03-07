@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d">
-    
+
     <materialDesign:Chip
         Visibility="{Binding WarningVisibility}"
         Padding="8"
@@ -19,5 +19,5 @@
                 Kind="Warning" />
         </materialDesign:Chip.Icon>
     </materialDesign:Chip>
-    
+
 </UserControl>

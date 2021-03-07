@@ -9,11 +9,16 @@ namespace TyreDegradation.Services.Results
 {
     public class ResultsService
     {
+        private readonly DegradationCalculator _degradationCalculator;
         private readonly Dictionary<TyrePlacement, TyreInformation> _selectedTyres;
+        private readonly TyreSelectionValidator _tyreSelectionValidator;
+
+        public readonly Dictionary<TyrePlacement, Action<DegradationResults>> DegradationResults;
         private TrackInformation _selectedTrack;
         private int _temperature;
-        private readonly DegradationCalculator _degradationCalculator;
-        private readonly TyreSelectionValidator _tyreSelectionValidator;
+        public Action<string> SelectionsInvalid;
+        public Action SelectionsValid;
+
         public ResultsService()
         {
             DegradationResults = new Dictionary<TyrePlacement, Action<DegradationResults>>
@@ -30,14 +35,10 @@ namespace TyreDegradation.Services.Results
                 {TyrePlacement.RearLeft, null},
                 {TyrePlacement.RearRight, null}
             };
-            
+
             _degradationCalculator = new DegradationCalculator();
             _tyreSelectionValidator = new TyreSelectionValidator();
         }
-
-        public readonly Dictionary<TyrePlacement, Action<DegradationResults>> DegradationResults;
-        public Action SelectionsValid;
-        public Action<string> SelectionsInvalid;
 
         public void SetSelectedTyre(TyrePlacement placement, TyreInformation tyreInformation)
         {
@@ -50,7 +51,7 @@ namespace TyreDegradation.Services.Results
             _selectedTrack = trackInformation;
             RecalculateForEachTyre();
         }
-        
+
         public void SetTemperature(int temperature)
         {
             _temperature = temperature;
@@ -60,13 +61,9 @@ namespace TyreDegradation.Services.Results
         private void RecalculateForEachTyre()
         {
             foreach (var (placement, _) in DegradationResults)
-            {
-                if (_selectedTyres[placement] == null) return;
-            }
-            if (_selectedTrack is null)
-            {
-                return;
-            }
+                if (_selectedTyres[placement] == null)
+                    return;
+            if (_selectedTrack is null) return;
 
             var validationResult = _tyreSelectionValidator.Validate(_selectedTyres);
             if (validationResult.Result == false)
@@ -74,18 +71,19 @@ namespace TyreDegradation.Services.Results
                 SelectionsInvalid.Invoke(validationResult.Message);
                 return;
             }
-            
+
             SelectionsValid.Invoke();
             foreach (var (placement, action) in DegradationResults)
             {
                 var result = CalculateDegradationResults(placement);
                 action.Invoke(result);
             }
-        } 
+        }
 
         private DegradationResults CalculateDegradationResults(TyrePlacement placement)
         {
-            return _degradationCalculator.Calculate(_selectedTyres[placement], _selectedTrack.DegradationPoints, _temperature);
+            return _degradationCalculator.Calculate(_selectedTyres[placement], _selectedTrack.DegradationPoints,
+                _temperature);
         }
     }
 }

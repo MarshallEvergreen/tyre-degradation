@@ -7,11 +7,11 @@ namespace TyreDegradation.MainApp.ViewModels
 {
     public class TyreResultsViewModel : BindableBase
     {
-        private string _average;
-        private string _range;
-        private string _averageColour;
-        private string _rangeColour;
         private const string Transparent = "#00FFFFFF";
+        private string _average;
+        private string _averageColour;
+        private string _range;
+        private string _rangeColour;
 
         public TyreResultsViewModel(ResultsService resultsService, TyrePlacement placement)
         {
@@ -26,28 +26,9 @@ namespace TyreDegradation.MainApp.ViewModels
                 RangeColour = GetColourForValue(range);
                 Range = range.ToString();
             };
-            
+
             resultsService.SelectionsInvalid += _ => SetResultsToNa();
             SetResultsToNa();
-        }
-
-        private string GetColourForValue(int value)
-        {
-            return value switch
-            {
-                < 999 => "Green",
-                > 999 and < 3000 => "Orange",
-                > 3000 => "Red",
-                _ => Transparent
-            };
-        }
-
-        private void SetResultsToNa()
-        {
-            Average = "NA";
-            Range = "NA";
-            AverageColour = Transparent;
-            RangeColour = Transparent;
         }
 
         public string Average
@@ -72,6 +53,25 @@ namespace TyreDegradation.MainApp.ViewModels
         {
             get => _rangeColour;
             set => SetProperty(ref _rangeColour, value);
+        }
+
+        private string GetColourForValue(int value)
+        {
+            return value switch
+            {
+                < 999 => "Green",
+                > 999 and < 3000 => "Orange",
+                > 3000 => "Red",
+                _ => Transparent
+            };
+        }
+
+        private void SetResultsToNa()
+        {
+            Average = "NA";
+            Range = "NA";
+            AverageColour = Transparent;
+            RangeColour = Transparent;
         }
     }
 }

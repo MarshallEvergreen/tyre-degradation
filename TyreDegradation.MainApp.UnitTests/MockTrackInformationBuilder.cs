@@ -16,6 +16,8 @@ namespace TyreDegradation.MainApp.UnitTests
             _trackInformation = new Dictionary<string, TrackInformation>();
         }
 
+        public IReadOnlyDictionary<string, TrackInformation> Tracks => _trackInformation;
+
         public Mock<ITrackInformation> Build()
         {
             AddTrackInformation();
@@ -24,15 +26,13 @@ namespace TyreDegradation.MainApp.UnitTests
             return _mock;
         }
 
-        public IReadOnlyDictionary<string, TrackInformation> Tracks => _trackInformation;
-
         private void AddTrackInformation()
         {
             _trackInformation["SomeTrack"] = new TrackInformation
             {
                 Name = "SomeTrack",
                 Location = "SomeWhere",
-                DegradationPoints = new List<int>{10, 20}
+                DegradationPoints = new List<int> {10, 20}
             };
         }
     }

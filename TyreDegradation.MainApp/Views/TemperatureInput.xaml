@@ -14,7 +14,6 @@
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
             Width="200"
             Text="{Binding Temperature, UpdateSourceTrigger=PropertyChanged}"
-            Height="50">
-        </TextBox>
+            Height="50" />
     </Grid>
 </UserControl>

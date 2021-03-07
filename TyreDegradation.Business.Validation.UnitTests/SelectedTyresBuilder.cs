@@ -6,7 +6,7 @@ namespace TyreDegradation.Business.Validation.UnitTests
 {
     public class SelectedTyresBuilder
     {
-        private Dictionary<TyrePlacement, TyreInformation> _selectedTyres;
+        private readonly Dictionary<TyrePlacement, TyreInformation> _selectedTyres;
 
         public SelectedTyresBuilder()
         {
@@ -17,7 +17,7 @@ namespace TyreDegradation.Business.Validation.UnitTests
         {
             return _selectedTyres;
         }
-        
+
         public SelectedTyresBuilder FrontLeftTyre(TyreCompound compound, string family)
         {
             _selectedTyres[TyrePlacement.FrontLeft] = new TyreInformation
@@ -28,7 +28,7 @@ namespace TyreDegradation.Business.Validation.UnitTests
 
             return this;
         }
-        
+
         public SelectedTyresBuilder FrontRightTyre(TyreCompound compound, string family)
         {
             _selectedTyres[TyrePlacement.FrontRight] = new TyreInformation
@@ -39,7 +39,7 @@ namespace TyreDegradation.Business.Validation.UnitTests
 
             return this;
         }
-        
+
         public SelectedTyresBuilder RearLeftTyre(TyreCompound compound, string family)
         {
             _selectedTyres[TyrePlacement.RearLeft] = new TyreInformation
@@ -50,7 +50,7 @@ namespace TyreDegradation.Business.Validation.UnitTests
 
             return this;
         }
-        
+
         public SelectedTyresBuilder RearRightTyre(TyreCompound compound, string family)
         {
             _selectedTyres[TyrePlacement.RearRight] = new TyreInformation

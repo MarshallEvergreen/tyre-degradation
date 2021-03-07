@@ -8,26 +8,25 @@ namespace TyreDegradation.Data.Parsers.UnitTests
     [TestClass]
     public class TrackInformationParserTests
     {
-        private TrackInformationParser _trackInformationParser;
-        private MockFileSystem _fileSystem;
-
         private const string SingleTrackInfoFile = "SingleTrackData.txt";
         private const string MultipleTrackInfoFile = "MultipleTrackData.txt";
-
-        private readonly string _silverstoneName = "SilverStone";
-        private readonly string _silverstoneLocation = "Towcester";
-        private readonly List<int> _silverstoneDegradationPoints = new() {234, 2323, 43, 234, 45, 3434, 34, 3343, 434};
+        private readonly List<int> _monacoDegradationPoints = new() {765, 456, 45, 456, 4};
+        private readonly string _MonacoLocation = "Monaco";
 
         private readonly string _monacoName = "Monaco";
-        private readonly string _MonacoLocation = "Monaco";
-        private readonly List<int> _monacoDegradationPoints = new() {765, 456, 45, 456, 4};
+        private readonly List<int> _silverstoneDegradationPoints = new() {234, 2323, 43, 234, 45, 3434, 34, 3343, 434};
+        private readonly string _silverstoneLocation = "Towcester";
+
+        private readonly string _silverstoneName = "SilverStone";
+        private MockFileSystem _fileSystem;
+        private TrackInformationParser _trackInformationParser;
 
         [TestInitialize]
         public void TestInitialize()
         {
             var silverstoneTrackInfo =
                 CreateTrackInfoString(_silverstoneName, _silverstoneLocation, _silverstoneDegradationPoints);
-            
+
             var monacoTrackInfo = CreateTrackInfoString(_monacoName, _MonacoLocation, _monacoDegradationPoints);
 
             _fileSystem = new MockFileSystem(new Dictionary<string, MockFileData>
@@ -55,7 +54,7 @@ namespace TyreDegradation.Data.Parsers.UnitTests
 
             trackInfo.Should().HaveCount(1);
         }
-        
+
         [TestMethod]
         public void SingleTrack_TrackNameParsedCorrectly()
         {
@@ -79,7 +78,7 @@ namespace TyreDegradation.Data.Parsers.UnitTests
 
             trackInfo["SilverStone"].DegradationPoints.Should().Equal(_silverstoneDegradationPoints);
         }
-        
+
         [TestMethod]
         public void MultipleTracks_ContainsInformationForCorrectNumberOfTrack()
         {
@@ -87,7 +86,7 @@ namespace TyreDegradation.Data.Parsers.UnitTests
 
             trackInfo.Should().HaveCount(2);
         }
-        
+
         [TestMethod]
         public void MultipleTracks_NamesParsedCorrectly()
         {

@@ -27,15 +27,15 @@ namespace TyreDegradation.Data.Parsers
                 [TyrePlacement.RearLeft] = new(),
                 [TyrePlacement.RearRight] = new()
             };
-            
+
             foreach (var tyre in tyres)
             {
                 var tyreInfo = new TyreInformation
                 {
                     Name = (string) tyre.Element("Name")?.Value,
                     Family = (string) tyre.Element("Family")?.Value,
-                    Type = CompoundStringToEnum((string)tyre.Element("Type")?.Value),
-                    Placement = PlacementStringToEnum((string)tyre.Element("Placement")?.Value),
+                    Type = CompoundStringToEnum((string) tyre.Element("Type")?.Value),
+                    Placement = PlacementStringToEnum((string) tyre.Element("Placement")?.Value),
                     DegradationCoefficient = Convert.ToInt32(tyre.Element("DegradationCoefficient")?.Value)
                 };
                 allTyreInfo[tyreInfo.Placement].Add(tyreInfo);
@@ -55,7 +55,7 @@ namespace TyreDegradation.Data.Parsers
                 _ => throw new ArgumentException()
             };
         }
-        
+
         private TyreCompound CompoundStringToEnum(string placement)
         {
             return placement switch

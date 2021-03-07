@@ -12,13 +12,13 @@ namespace TyreDegradation.MainApp.UnitTests
     [TestClass]
     public class MainWindowViewModelUnitTests
     {
-        private MockTyreInformationBuilder _mockTyreInformationBuilder;
-        private Mock<ITyreInformation> _tyreInformation;
+        private MainWindowViewModel _mainWindowViewModel;
 
         private MockTrackInformationBuilder _mockTrackInformationBuilder;
-        private Mock<ITrackInformation> _trackInformation;
+        private MockTyreInformationBuilder _mockTyreInformationBuilder;
         private ResultsService _resultsService;
-        private MainWindowViewModel _mainWindowViewModel;
+        private Mock<ITrackInformation> _trackInformation;
+        private Mock<ITyreInformation> _tyreInformation;
 
         [TestInitialize]
         public void Initialize()

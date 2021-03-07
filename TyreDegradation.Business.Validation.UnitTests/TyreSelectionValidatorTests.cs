@@ -7,8 +7,8 @@ namespace TyreDegradation.Business.Validation.UnitTests
     [TestClass]
     public class TyreSelectionValidatorTests
     {
-        private readonly TyreSelectionValidator _tyreSelectionValidator = new();
         private readonly SelectedTyresBuilder _selectedTyresBuilder = new();
+        private readonly TyreSelectionValidator _tyreSelectionValidator = new();
 
         [TestMethod]
         public void Result_true_AllTyresSameCompound()
@@ -19,13 +19,13 @@ namespace TyreDegradation.Business.Validation.UnitTests
                 .RearLeftTyre(TyreCompound.SuperSoft, "F1")
                 .RearRightTyre(TyreCompound.SuperSoft, "F1")
                 .Build();
-            
+
             var result = _tyreSelectionValidator.Validate(tyres);
-            
+
             result.Result.Should().Be(true);
             result.Message.Should().BeNullOrEmpty();
         }
-        
+
         [TestMethod]
         public void Result_false_FrontLeftDifferent()
         {
@@ -35,13 +35,13 @@ namespace TyreDegradation.Business.Validation.UnitTests
                 .RearLeftTyre(TyreCompound.SuperSoft, "F1")
                 .RearRightTyre(TyreCompound.SuperSoft, "F1")
                 .Build();
-            
+
             var result = _tyreSelectionValidator.Validate(tyres);
-            
+
             result.Result.Should().Be(false);
             result.Message.Should().NotBeEmpty();
         }
-        
+
         [TestMethod]
         public void Result_false_FrontRightDifferent()
         {
@@ -51,13 +51,13 @@ namespace TyreDegradation.Business.Validation.UnitTests
                 .RearLeftTyre(TyreCompound.SuperSoft, "F1")
                 .RearRightTyre(TyreCompound.SuperSoft, "F1")
                 .Build();
-            
+
             var result = _tyreSelectionValidator.Validate(tyres);
-            
+
             result.Result.Should().Be(false);
             result.Message.Should().NotBeEmpty();
         }
-        
+
         [TestMethod]
         public void Result_false_RearLeftDifferent()
         {
@@ -67,13 +67,13 @@ namespace TyreDegradation.Business.Validation.UnitTests
                 .RearLeftTyre(TyreCompound.Soft, "F1")
                 .RearRightTyre(TyreCompound.SuperSoft, "F1")
                 .Build();
-            
+
             var result = _tyreSelectionValidator.Validate(tyres);
-            
+
             result.Result.Should().Be(false);
             result.Message.Should().NotBeEmpty();
         }
-        
+
         [TestMethod]
         public void Result_false_RearRightDifferent()
         {
@@ -83,13 +83,13 @@ namespace TyreDegradation.Business.Validation.UnitTests
                 .RearLeftTyre(TyreCompound.SuperSoft, "F1")
                 .RearRightTyre(TyreCompound.Soft, "F1")
                 .Build();
-            
+
             var result = _tyreSelectionValidator.Validate(tyres);
-            
+
             result.Result.Should().Be(false);
             result.Message.Should().NotBeEmpty();
         }
-        
+
         [TestMethod]
         public void Result_false_AllDifferent()
         {
@@ -99,13 +99,13 @@ namespace TyreDegradation.Business.Validation.UnitTests
                 .RearLeftTyre(TyreCompound.Medium, "F1")
                 .RearRightTyre(TyreCompound.Hard, "F1")
                 .Build();
-            
+
             var result = _tyreSelectionValidator.Validate(tyres);
-            
+
             result.Result.Should().Be(false);
             result.Message.Should().NotBeEmpty();
         }
-        
+
         [TestMethod]
         public void Result_true_FrontAxleFamilyMatch_RearAxleFamilyMatch()
         {
@@ -115,13 +115,13 @@ namespace TyreDegradation.Business.Validation.UnitTests
                 .RearLeftTyre(TyreCompound.SuperSoft, "F1")
                 .RearRightTyre(TyreCompound.SuperSoft, "F1")
                 .Build();
-            
+
             var result = _tyreSelectionValidator.Validate(tyres);
-            
+
             result.Result.Should().Be(true);
             result.Message.Should().BeNullOrEmpty();
         }
-        
+
         [TestMethod]
         public void Result_false_FrontAxleFamilyMismatch_RearAxleFamilyMatch()
         {
@@ -131,13 +131,13 @@ namespace TyreDegradation.Business.Validation.UnitTests
                 .RearLeftTyre(TyreCompound.SuperSoft, "F1")
                 .RearRightTyre(TyreCompound.SuperSoft, "F1")
                 .Build();
-            
+
             var result = _tyreSelectionValidator.Validate(tyres);
-            
+
             result.Result.Should().Be(false);
             result.Message.Should().NotBeEmpty();
         }
-        
+
         [TestMethod]
         public void Result_false_FrontAxleFamilyMatch_RearAxleFamilyMismatch()
         {
@@ -147,9 +147,9 @@ namespace TyreDegradation.Business.Validation.UnitTests
                 .RearLeftTyre(TyreCompound.SuperSoft, "F2")
                 .RearRightTyre(TyreCompound.SuperSoft, "F1")
                 .Build();
-            
+
             var result = _tyreSelectionValidator.Validate(tyres);
-            
+
             result.Result.Should().Be(false);
             result.Message.Should().NotBeEmpty();
         }

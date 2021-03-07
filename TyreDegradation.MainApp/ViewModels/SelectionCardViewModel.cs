@@ -14,7 +14,8 @@ namespace TyreDegradation.MainApp.ViewModels
         {
             // TODO Remove hardcoded path
             var tyreInfo = tyreInformation.GetTyreData(@"C:\dev\tyre-degradation\Data\TyresXML.xml");
-            var trackInfo = trackInformation.GetTrackData(@"C:\dev\tyre-degradation\Data\TrackDegradationCoefficients.txt");
+            var trackInfo =
+                trackInformation.GetTrackData(@"C:\dev\tyre-degradation\Data\TrackDegradationCoefficients.txt");
             FrontLeft = new TyreComboBoxViewModel(resultsService, TyrePlacement.FrontLeft, tyreInfo);
             FrontRight = new TyreComboBoxViewModel(resultsService, TyrePlacement.FrontRight, tyreInfo);
             RearLeft = new TyreComboBoxViewModel(resultsService, TyrePlacement.RearLeft, tyreInfo);

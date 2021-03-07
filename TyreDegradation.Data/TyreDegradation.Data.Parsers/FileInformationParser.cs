@@ -8,6 +8,7 @@ namespace TyreDegradation.Data.Parsers
         {
             FileSystem = fileSystem;
         }
+
         protected IFileSystem FileSystem { get; }
     }
 }

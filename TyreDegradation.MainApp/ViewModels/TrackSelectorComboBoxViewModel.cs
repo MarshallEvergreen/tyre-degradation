@@ -18,14 +18,11 @@ namespace TyreDegradation.MainApp.ViewModels
         {
             _resultsService = resultsService;
             _trackInformation = trackInformation;
-            
+
             Tracks = new ObservableCollection<string>();
-            foreach (var track in trackInformation)
-            {
-                Tracks.Add(track.Key);
-            }
+            foreach (var track in trackInformation) Tracks.Add(track.Key);
         }
-        
+
         public ObservableCollection<string> Tracks { get; }
 
         public string Track
