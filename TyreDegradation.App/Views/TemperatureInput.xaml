@@ -21,6 +21,7 @@
             Margin="14 0 0 0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
+            PreviewTextInput="NumberValidationTextBox"
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
             Width="100"
             Text="{Binding Temperature, UpdateSourceTrigger=PropertyChanged}"

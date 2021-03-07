@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-using Prism.Mvvm;
+﻿using Prism.Mvvm;
 using TyreDegradation.Contract.Enums;
 using TyreDegradation.Contract.Interfaces;
-using TyreDegradation.Contract.Models;
 using TyreDegradation.Services.Results;
 
 namespace TyreDegradation.App.ViewModels
