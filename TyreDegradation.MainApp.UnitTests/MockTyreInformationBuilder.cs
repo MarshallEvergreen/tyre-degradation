@@ -23,7 +23,7 @@ namespace TyreDegradation.MainApp.UnitTests
             AddFrontRightTyres();
             AddRearLeftTyres();
             AddRearRightTyres();
-            
+
             _mock.Setup(m => m.GetTyreData(It.IsAny<string>())).Returns(_tyreInformation);
             return _mock;
         }
@@ -39,6 +39,14 @@ namespace TyreDegradation.MainApp.UnitTests
                 {
                     Name = "Tyre 1",
                     Family = "F1",
+                    Placement = TyrePlacement.FrontLeft,
+                    Type = TyreCompound.SuperSoft,
+                    DegradationCoefficient = 10
+                },
+                new()
+                {
+                    Name = "Tyre 5",
+                    Family = "F2",
                     Placement = TyrePlacement.FrontLeft,
                     Type = TyreCompound.SuperSoft,
                     DegradationCoefficient = 10
@@ -59,6 +67,14 @@ namespace TyreDegradation.MainApp.UnitTests
                     Placement = TyrePlacement.FrontRight,
                     Type = TyreCompound.SuperSoft,
                     DegradationCoefficient = 10
+                },
+                new()
+                {
+                    Name = "Tyre 6",
+                    Family = "F2",
+                    Placement = TyrePlacement.FrontRight,
+                    Type = TyreCompound.SuperSoft,
+                    DegradationCoefficient = 10
                 }
             };
             _tyreInformation[TyrePlacement.FrontRight] = frontRightTyres;
@@ -76,6 +92,14 @@ namespace TyreDegradation.MainApp.UnitTests
                     Placement = TyrePlacement.RearLeft,
                     Type = TyreCompound.SuperSoft,
                     DegradationCoefficient = 10
+                },
+                new()
+                {
+                    Name = "Tyre 7",
+                    Family = "F2",
+                    Placement = TyrePlacement.RearLeft,
+                    Type = TyreCompound.SuperSoft,
+                    DegradationCoefficient = 10
                 }
             };
             _tyreInformation[TyrePlacement.RearLeft] = rearLeftTyres;
@@ -90,6 +114,14 @@ namespace TyreDegradation.MainApp.UnitTests
                 {
                     Name = "Tyre 4",
                     Family = "F1",
+                    Placement = TyrePlacement.RearRight,
+                    Type = TyreCompound.SuperSoft,
+                    DegradationCoefficient = 10
+                },
+                new()
+                {
+                    Name = "Tyre 8",
+                    Family = "F2",
                     Placement = TyrePlacement.RearRight,
                     Type = TyreCompound.SuperSoft,
                     DegradationCoefficient = 10

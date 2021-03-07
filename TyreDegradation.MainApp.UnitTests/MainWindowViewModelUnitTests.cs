@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Windows;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
@@ -38,6 +39,15 @@ namespace TyreDegradation.MainApp.UnitTests
         private void SelectTyresAndATrack()
         {
             _mainWindowViewModel.SelectionCard.FrontLeft.SelectedTyre = "Tyre 1";
+            _mainWindowViewModel.SelectionCard.FrontRight.SelectedTyre = "Tyre 2";
+            _mainWindowViewModel.SelectionCard.RearLeft.SelectedTyre = "Tyre 3";
+            _mainWindowViewModel.SelectionCard.RearRight.SelectedTyre = "Tyre 4";
+            _mainWindowViewModel.SelectionCard.TrackSelector.Track = "SomeTrack";
+        }
+        
+        private void InvalidTyreSelection()
+        {
+            _mainWindowViewModel.SelectionCard.FrontLeft.SelectedTyre = "Tyre 5";
             _mainWindowViewModel.SelectionCard.FrontRight.SelectedTyre = "Tyre 2";
             _mainWindowViewModel.SelectionCard.RearLeft.SelectedTyre = "Tyre 3";
             _mainWindowViewModel.SelectionCard.RearRight.SelectedTyre = "Tyre 4";
@@ -88,16 +98,16 @@ namespace TyreDegradation.MainApp.UnitTests
         {
 
             _mainWindowViewModel.SelectionCard
-                .FrontLeft.AvailableTyres.Should().BeEquivalentTo(new List<string>{"Tyre 1"});
+                .FrontLeft.AvailableTyres.Should().BeEquivalentTo(new List<string>{"Tyre 1", "Tyre 5"});
             
             _mainWindowViewModel.SelectionCard
-                .FrontRight.AvailableTyres.Should().BeEquivalentTo(new List<string>{"Tyre 2"});
+                .FrontRight.AvailableTyres.Should().BeEquivalentTo(new List<string>{"Tyre 2", "Tyre 6"});
             
             _mainWindowViewModel.SelectionCard
-                .RearLeft.AvailableTyres.Should().BeEquivalentTo(new List<string>{"Tyre 3"});
+                .RearLeft.AvailableTyres.Should().BeEquivalentTo(new List<string>{"Tyre 3", "Tyre 7"});
             
             _mainWindowViewModel.SelectionCard
-                .RearRight.AvailableTyres.Should().BeEquivalentTo(new List<string>{"Tyre 4"});
+                .RearRight.AvailableTyres.Should().BeEquivalentTo(new List<string>{"Tyre 4", "Tyre 8"});
         }
         
         [TestMethod]
@@ -186,6 +196,23 @@ namespace TyreDegradation.MainApp.UnitTests
             _mainWindowViewModel.SelectionCard.TemperatureSelector.Temperature = "90000";
             
             AverageAndRangeColoursAre("Red", "Red");
+        }
+        
+        [TestMethod]
+        public void InvalidSelections_WarningIsRaised()
+        {
+            InvalidTyreSelection();
+
+            _mainWindowViewModel.SelectionWarning.WarningVisibility.Should().Be(Visibility.Visible);
+        }
+        
+        [TestMethod]
+        public void InvalidSelections_ResultsAreSetToNA()
+        {
+            InvalidTyreSelection();
+            
+            AveragesAndRangesAre("NA", "NA");
+            AverageAndRangeColoursAre("#00FFFFFF", "#00FFFFFF");
         }
     }
 }
