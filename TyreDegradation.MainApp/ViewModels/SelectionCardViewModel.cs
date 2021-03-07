@@ -1,4 +1,5 @@
-﻿using Prism.Mvvm;
+﻿using System.IO;
+using Prism.Mvvm;
 using TyreDegradation.Contract.Enums;
 using TyreDegradation.Contract.Interfaces;
 using TyreDegradation.Services.Results;
@@ -12,10 +13,21 @@ namespace TyreDegradation.MainApp.ViewModels
             ITrackInformation trackInformation,
             ResultsService resultsService)
         {
-            // TODO Remove hardcoded path
-            var tyreInfo = tyreInformation.GetTyreData(@"C:\dev\tyre-degradation\Data\TyresXML.xml");
-            var trackInfo =
-                trackInformation.GetTrackData(@"C:\dev\tyre-degradation\Data\TrackDegradationCoefficients.txt");
+            var location = System.Reflection.Assembly.GetExecutingAssembly().Location;
+
+            // Get the Location of the data directory relative to the execution location of the app
+            // this is where the TyresXML.xml and TrackDegradationCoefficients.txt are located.
+            
+            var dataLocation = Path.Combine(location, @"..\..\..\..\..\Data");
+            var tyreInfoFile = Path.Combine(dataLocation, "TyresXML.xml");
+            var trackInfoFile = Path.Combine(dataLocation, "TrackDegradationCoefficients.txt");
+            
+            // Read in the data from the above files. 
+            // If this isn't working for some reason just hardcode the path in the function calls below
+            // to wherever the files are located on your local machine. 
+            var tyreInfo = tyreInformation.GetTyreData(tyreInfoFile);
+            var trackInfo = trackInformation.GetTrackData(trackInfoFile);
+            
             FrontLeft = new TyreComboBoxViewModel(resultsService, TyrePlacement.FrontLeft, tyreInfo);
             FrontRight = new TyreComboBoxViewModel(resultsService, TyrePlacement.FrontRight, tyreInfo);
             RearLeft = new TyreComboBoxViewModel(resultsService, TyrePlacement.RearLeft, tyreInfo);
