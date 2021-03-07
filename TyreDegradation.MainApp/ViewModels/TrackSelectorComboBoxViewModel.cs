@@ -25,8 +25,6 @@ namespace TyreDegradation.MainApp.ViewModels
             {
                 Tracks.Add(track.Key);
             }
-
-            _track = Tracks.FirstOrDefault();
         }
         
         public ObservableCollection<string> Tracks { get; }

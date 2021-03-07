@@ -14,7 +14,7 @@
             <RowDefinition Height="40*" />
             <RowDefinition Height="60*" />
         </Grid.RowDefinitions>
-        <views:SelectionCard Grid.Row="0" />
-        <views:ResultsCard Grid.Row="1" />
+        <views:SelectionCard Grid.Row="0" DataContext="{Binding SelectionCard}" />
+        <views:ResultsCard Grid.Row="1" DataContext="{Binding ResultsCard}" />
     </Grid>
 </Window>
