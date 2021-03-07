@@ -3,23 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="Auto" />
-        </Grid.ColumnDefinitions> 
-        <TextBlock 
-            Grid.Column="0"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Left"
-            Margin="24 0 8 0"
-            Style="{StaticResource MaterialDesignTextBlock}"
-            Text="{Binding TyrePlacement}" />
         <ComboBox
-            Grid.Column="1"
+            materialDesign:HintAssist.Hint="{Binding TyrePlacement}"
             VerticalAlignment="Center"
-            HorizontalAlignment="Right"
+            HorizontalAlignment="Center"
             Style="{StaticResource MaterialDesignOutlinedComboBox}"
             ItemsSource="{Binding AvailableTyres}"
             SelectedItem="{Binding SelectedTyre}"
